@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+ {% load crispy_forms_tags %}
+{% load static %}
+{% block title %}SecuredCapitalFx|Register{% endblock %}
+
+
+{% block body_block %}
+
+{% include 'header.html' %}
+    		<div class="bannerContainer">
+			<div class="bannerInner insideheader fadeInRight wow">
+				<div class="ctn-banner">
+					<h3><span>Open New Account</span></h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<body class="loginarea">
+		<div class="signuppage">
+			<div class="becomeInner">
+				<div class="loginwrappers">
+					<div class="form-container signup">
+						
+				
+					 {% comment %} {% if registered %}
+                    <div class="alert alert-success">
+                        Account created successfully <a href="{% url 'account:login'%}">Login Here</a>
+                    </div>
+                     {% else %} {% endcomment %}
+					  <form method="post">
+    {% csrf_token %}
+      {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="display: none">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+      {% endfor %}
+    <button type="submit">Sign up</button>
+  </form>
+                    <br>
+                    <p>Already have an account?<a href="{% url 'account:login'%}">Login Here</a></p>
+                    {% comment %} {% endif %} {% endcomment %}
+							
+						</div>
+					</div>
+				</div>
+				<div class="loginpageright" style="padding-top:200px">
+					<iframe width="400" height="200" src="https://www.youtube.com/embed/5Uh720poZ8w?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<div class="primebitContainer">
+		<div class="primebitInner">
+			<h1><span>3 level</span> Referral commission</h1>
+			<div class="ctn-level">
+				<div class="livel-part">
+					<h2>4<span>%</span></h2>
+					<p>level1</p>
+				</div>
+				<div class="livel-img">
+					<img src="styles/assets/styles/images/call-ic2.png">
+				</div>
+				<div class="livel-part">
+					<h2>5<span>%</span></h2>
+					<p>level2</p>
+				</div>
+				<div class="livel-img">
+					<img src="styles/assets/styles/images/call-ic2.png">
+				</div>
+				<div class="livel-part">
+					<h2>5<span>%</span></h2>
+					<p>livel3</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+{% comment %} {% include 'footer.html' %} {% endcomment %}
+{% endblock  %}
+</body>
+
+

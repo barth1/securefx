@@ -1,0 +1,68 @@
+{% extends 'bases.html' %}
+{% load static %}
+{% block title %}SecuredCapitalFx|Transaction{% endblock %}
+
+
+{% block body_block %}
+
+{% include 'dashheader.html' %}
+
+<section class="banner-area">
+			<div class="banner-overlay">
+				<div class="banner-text text-center">
+					<div class="container">
+						<!-- Section Title Starts -->
+						<div class="row text-center">
+							<div class="col-xs-12">
+								<!-- Title Starts -->
+								<h2 class="title-head">Transactions</h2>
+								<!-- Title Ends -->
+								<hr>
+								<!-- Breadcrumb Ends -->
+							</div>
+						</div>
+						<!-- Section Title Ends -->
+					</div>
+				</div>
+			</div>
+		</section>
+        <!-- Banner Area Starts -->
+        
+
+        <section class="container">
+      
+                        
+        <table class="table" style="font-size:90%" >
+
+<hr>
+  <thead>
+
+  <tr>
+      <th> Transaction ID</th>
+      <th >Type</th>
+      <th>Amount ($)</th>
+      <th>Address/ Number</th>
+      <th>Description</th>
+       <th>Date</th>
+      <th> Status</th>
+  </tr>
+  </thead>
+  <tbody>
+     
+  <tr>
+      <td> 2035820730</td>
+      <td >BTC</td>
+      <td> 99</td>
+      <td>Wallet Address</td>
+      <td>Deposit</td>
+      <td>2021-07-21 01:55:44</td>
+   <td><button style="padding:5px;font-size:12px;color:white;" class="btn btn-primary btn-xs fa fa-check" disabled>Pending</button>
+   </td>
+    </tr>
+  
+  </tbody>
+</table>
+                 
+           </section>
+{% include 'footer.html' %}
+{% endblock  %}

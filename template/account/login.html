@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}SecuredCapitalFx|Login{% endblock %}
+
+
+{% block body_block %}
+
+{% include 'header.html' %}
+    		<div class="bannerContainer">
+			<div class="bannerInner insideheader fadeInRight wow">
+				<div class="ctn-banner">
+					<h3><span>Open New Account</span></h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<body class="loginarea">
+		<div class="signuppage">
+			<div class="becomeInner">
+				<div class="loginwrappers">
+					<div class="form-container signup">
+						
+				
+											<!-- Form Starts -->
+						<form method="POST">
+                            {{form|crispy}}
+                            {% csrf_token %}
+                            <br>
+							<a href=" {% url 'account:password_reset' %}">Forgot Your Password?</a>
+							<br>
+                            <button name="submit" class="btn btn-success btn-sm">Login</button>
+                        </form>
+							
+						</div>
+					</div>
+				</div>
+				<div class="loginpageright" style="padding-top:200px">
+					<iframe width="400" height="200" src="https://www.youtube.com/embed/5Uh720poZ8w?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<div class="primebitContainer">
+		<div class="primebitInner">
+			<h1><span>3 level</span> Referral commission</h1>
+			<div class="ctn-level">
+				<div class="livel-part">
+					<h2>4<span>%</span></h2>
+					<p>level1</p>
+				</div>
+				<div class="livel-img">
+					<img src="styles/assets/styles/images/call-ic2.png">
+				</div>
+				<div class="livel-part">
+					<h2>5<span>%</span></h2>
+					<p>level2</p>
+				</div>
+				<div class="livel-img">
+					<img src="styles/assets/styles/images/call-ic2.png">
+				</div>
+				<div class="livel-part">
+					<h2>5<span>%</span></h2>
+					<p>livel3</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+{% include 'footer.html' %}
+{% endblock  %}
+</body>

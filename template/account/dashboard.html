@@ -1,0 +1,108 @@
+{% extends 'bases.html' %}
+{% load static %}
+{% block title %}SecuredCapitalFx|Dashboard{% endblock %}
+
+
+{% block body_block %}
+
+{% include 'dashheader.html' %}
+<div class="account_contentContainer" style="background-image: url('/static/images/bg_title_acc.png');">
+		<div class="account_contentInner">
+			<div class="account_title">
+				<div class="account_title_Left" >
+					<div class="user" style="background-image: url('/static/images/icon_user.png');"></div>
+					<p>Hello, <span>{{user.username}}</span></p>
+					<div class="clearfix"></div>
+				</div>
+				<div class="account_title_Right"   style="background-image: url('/static/images/icon_title_ac.png');">
+					<p>Your Personal Affiliate Link:</p>
+					<a href="https://utvcapital.com/signup.php?ref=kel@gmail.com" > https://utvcapital.com/signup.php?ref=kel@gmail.com </a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="account_ctn">
+				<div class="account_ctn_Left">
+					<ul>
+						<li><a class="btn_acc hvr-sweep-to-right" style="background-image: url('/static/images/icon_menu_acc1.png');" href="{% url 'account:accounts' %}">account</a></li>
+						<li><a class="btn_dep hvr-sweep-to-right" style="background-image: url('/static/images/icon_menu_acc2.png');" href="{% url 'account:deposit' %}">deposit</a></li>
+						<li><a class="btn_withd hvr-sweep-to-right" style="background-image: url('/static/images/icon_menu_acc3.png');" href="{% url 'account:withdraw' %}">withdraw</a></li>
+						<li><a class="btn_trans hvr-sweep-to-right" style="background-image: url('/static/images/icon_menu_acc5.png');" href="{% url 'account:transactions' %}">transactions</a></li>
+						<li><a class="btn_refer hvr-sweep-to-right" style="background-image: url('/static/images/icon_menu_acc6.png');" href="{% url 'account:referrals' %}">referrals</a></li>
+						<li><a class="btn_setting hvr-sweep-to-right" style="background-image: url('/static/images/icon_menu_acc7.png');" href="{% url 'account:profile' %}">settings</a></li>
+						
+					</ul>
+				</div>
+				<div class="account_ctn_Right">
+
+
+
+
+
+	<div class="account_ctn_Right_Part1">
+						<div class="acr_Part1 acr_Part11">
+							<h4>Fullname:</h4>
+							<h3>{{user.first_name}} {{user.last_name}}</h3>
+						</div>
+						<div class="acr_Part1 acr_Part12">
+							<h4>Registration Date:</h4>
+							<h3>2021-07-21 02:52:18</h3>
+						</div>
+						
+					</div>
+					<div class="account_ctn_Right_Part2">
+						<div class="acr_Part2 acr_Part21 ">
+							<div class="acr_Part2_title" style="background-image: url('/static/images/icon_acc_right4.png')">
+								<p>Account Balance</p>
+															<h3>$<b>0</b></h3>
+							</div>
+							<div class="acr_Part2_ctn">
+								<a href="#">request payment</a>
+							</div>
+						</div>
+						<div class="acr_Part2 acr_Part22 ">
+							<div class="acr_Part2_title" style="background-image: url('/static/images/icon_acc_right5.png')">
+								<p>earned total</p>
+								<h3>$0</h3>
+							</div>
+							<div class="acr_Part2_ctn">
+								<a href="#">make a deposit</a>
+							</div>
+						</div>
+						<div class="acr_Part2 acr_Part23">
+							<div class="acr_Part2_title" style="background-image: url('/static/images/icon_acc_right6.png')">
+								<p>active deposit</p>
+								<h3>$<b>0</b></h3>
+							</div>
+							<div class="acr_Part2_ctn">
+								<ul>
+									<li>Last Deposit:<span>$<b>0</b><span></li>
+									<li>Total Deposit:<span>$<b>0</b><span></li>
+								</ul>
+							</div>
+						</div>
+						<div class="acr_Part2 acr_Part24">
+							<div class="acr_Part2_title" style="background-image: url('/static/images/icon_acc_right7.png')">
+								<p>total withdrawal</p>
+								<h3>$<b>0</b></h3>
+							</div>
+							<div class="acr_Part2_ctn">
+								<ul>
+									<li>Last Withdrawal: <span>$<b>0</b><span></li>
+									<li>Pending Withdrawal: <span>$<b>0</b><span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+
+                                                              
+<br><br>
+<br>
+</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+
+
+{% include 'footer.html' %}
+{% endblock  %}

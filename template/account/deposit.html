@@ -1,0 +1,227 @@
+{% extends 'subBase.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}SecuredCapitalFx|Deposit{% endblock %}
+
+
+{% block body_block %}
+
+{% include 'dashheader.html' %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+ 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+
+
+
+
+<style> 
+.col-xs-12 .text-center{
+    font-size: 1.5rem !important;
+    color: white !important;
+}
+.card-title{
+    font-size: 1.5rem;
+    font-family: 400;
+    color: white;
+    text-align: center;
+}
+.card-text{
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    
+}
+.btn-outline-warning{
+    font-size: 1rem;
+    text-align: center !important;
+}
+.btn{
+    width: 100px;
+    height: 40px;
+    padding-bottom: 10px;
+    border-radius: 30px;
+}
+.col-md-4 img{
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+.fluid{
+    padding-top: 50px;
+    padding-bottom: 20px;
+
+}
+.footer{
+    margin-top: 100px;
+    margin-bottom: 10px !important;
+    font-size: 1rem !important;
+    color: white !important;
+    text-align: center;
+}
+.card{
+    height: 300px;
+    border-radius: 20px;
+    background-color:transparent ;
+    border: rgb(172, 172, 3) solid;
+}
+.wrap{
+    background-color: rgb(14, 13, 13);
+}
+
+.deposit{
+    text-align: left !important;
+    padding: 20px;
+    color: white !important;
+    font-size: 2rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:500;
+}
+
+.modal-content{
+        background-color: rgb(66, 65, 65) !important;
+      }
+      .modal-title{    
+        color: white;
+      }
+      label{ 
+        color: white;
+       }
+h4{
+  margin-bottom: 30px;
+  margin-top: 30px;
+  margin-left: 10px;
+   color: white;
+   font-size: 3rem;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-weight: 500;
+}
+.card-deck{ 
+  width: 100%;
+  padding: 30px;
+ 
+       }
+.row{ 
+  width: 100%;
+  padding: 0px;
+ 
+    }
+
+</style> 
+
+ <div class="wrap">
+   
+  
+
+    <div class="container-fluid">
+      <div class="account_contentContainer" style="background-image: url('/static/images/bg_title_acc.png');">
+        <h4 class="deposit">Deposit Methods</h4>
+      </div>
+    </div>
+<div class="container-fluid fluid"> 
+<div class="card-deck">
+  {% for payment in form %}
+    <div class="card mb-3" >
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="  {{payment.coin_image.url}}" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"> {{payment.coin_name}}</h5>
+              <hr>
+              <p class="card-text">Limit : 1000 - 1000000 USD</p>
+              <hr>
+              <p class="card-text">Charge - 0 USD + 0%</p>
+              <hr>
+              <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#staticBackdrop">Deposit</button>
+               <!-- modal -->
+      <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Deposit via  {{payment.coin_name}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% comment %} <form action="" method="post">
+            {% csrf_token %}
+
+              <input type="hidden" name="_token" value="">
+            <div class="modal-body">
+                <div class="form-group">
+                  <div class="form-group">
+                    <input type="hidden" name="crypto_currency" value="{{payment.coin_name}}">
+                  </div>
+                    <label>Enter Amount:</label>
+                    <div class="input-group">
+                        <input id="amount" type="text" class="form-control form-control-lg" onkeyup="this.value = this.value.replace (/^\.|[^\d\.]/g, '')" name="amount" placeholder="0.00" required="" value="">
+      
+                        <div class="input-group-prepend">
+                            <span class="input-group-text addon-bg currency-addon">USD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <input type="submit" class="btn btn-danger" data-dismiss="modal" name="Confirm" value="NEXT">
+            </div>
+          </form> {% endcomment %}
+          {% comment %} <form method="post">
+              {{ form|crispy }}
+              {% csrf_token %}
+             <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-secondary" data-dismiss="modal">Next</button>
+            </div>
+
+            </form> {% endcomment %}
+          </div>
+        </div>
+      </div>
+
+      <!-- endmodal -->
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+              <div class="container-fluid">
+
+            </section>
+            <footer class="footer">
+                
+                   <div class="bottom-footer">
+                       <div class="container">
+                           <div class="row">
+                               <div class="col-xs-12">
+                                   
+                                   <p>Copyright © 2018 UTCapital All Rights Reserved </p>
+                                  
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </footer>
+              </div>
+            </div> 
+            
+
+
+
+   
+    <!-- OUR BEST SERVICES SECTION END -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>>
+
+{% endblock  %}

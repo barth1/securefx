@@ -1,0 +1,4 @@
+django_phonenumber_field==5.2.0
+Django==3.1.7
+django_countries==7.2.1
+python-decouple==3.4

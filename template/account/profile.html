@@ -1,0 +1,92 @@
+{% extends 'bases.html' %}
+{% load static %}
+{% block title %}SecuredCapitalFx|Profile{% endblock %}
+
+
+{% block body_block %}
+
+{% include 'dashheader.html' %}
+<section class="banner-area">
+			<div class="banner-overlay">
+				<div class="banner-text text-center">
+					<div class="container">
+						<!-- Section Title Starts -->
+						<div class="row text-center">
+							<div class="col-xs-12">
+								<!-- Title Starts -->
+								<h2 class="title-head">Profile</h2>
+								<!-- Title Ends -->
+								<hr>
+								<!-- Breadcrumb Ends -->
+							</div>
+						</div>
+						<!-- Section Title Ends -->
+					</div>
+				</div>
+			</div>
+		</section>
+        <!-- Banner Area Starts -->
+        
+
+        <section class="container">
+                                             	<form action="profile.php" method="post">
+                         <div class="col-md-12">
+                                    <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                         
+                                                    <input class="form-control" name="first_name" type="text" placeholder="Your First" value="dfkfkfkfkf" >
+                                              </div>
+                                        </div>
+                                        </div>
+                            
+							   
+                                        <div class="col-md-12">
+                                    <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                         
+                                                    <input class="form-control" name="last_name" type="text" placeholder="Your Last" value="mmcvmcmcm" >
+                                              </div>
+                                        </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                    <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                         
+                                                    <input readonly style="color:black"  class="form-control" type="text" placeholder="Your Email Address" value="kel@gmail.com" >
+                                              </div>
+                                        </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                    <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                         
+                                                    <input class="form-control" type="text" name="phone" placeholder="Your Phone" value="08122222222222222" >
+                                              </div>
+                                        </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                    <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-globe"></i></span>
+                                         
+                                                    <input readonly style="color:black" class="form-control" type="text" placeholder="Your Country" value="Nigeria" >
+                                              </div>
+                                        </div>
+                                        </div>
+								<div class="">
+								<center>	<button type="submit" class="btn btn-primary">Save</button> </center>
+								</div>
+							
+						</form>
+					
+                	
+
+                 
+           </section>
+
+{% comment %} {% include 'footer.html' %} {% endcomment %}
+{% endblock  %}

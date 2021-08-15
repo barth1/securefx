@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+ 
+{% block title %}SecuredCapitalFx|Support{% endblock %}
+{% block body_block %}
+{% include 'header.html' %}
+ <div class="bannerContainer">
+      <div class="bannerInner insideheader fadeInRight wow">
+        <div class="ctn-banner">
+          <h3>Contact <span>Us</span></h3>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="inside_wrap">
+      <div class="inside_inner">
+
+        <div class="contact_right">
+          <h1 class="section-header">Feedback Form</h1>
+
+
+
+          <script language=javascript>
+
+          function checkform() {
+            if (document.mainform.name.value == '') {
+              alert("Please type your full name!");
+              document.mainform.name.focus();
+              return false;
+            }
+            if (document.mainform.email.value == '') {
+              alert("Please enter your e-mail address!");
+              document.mainform.email.focus();
+              return false;
+            }
+            if (document.mainform.message.value == '') {
+              alert("Please type your message!");
+              document.mainform.message.focus();
+              return false;
+            }
+            return true;
+          }
+
+        </script>
+
+        <form method=post name=mainform onsubmit="return checkform()"><input type="hidden" name="form_id" value="16111733481998"><input type="hidden" name="form_token" value="c12f50887debd9e42fe30169116c0da3"><input type="hidden" name="form_id" value="15506316341453"><input type="hidden" name="form_token" value="4129f83085a4a1b3cb8e6bd560944359">
+          <input type=hidden name=a value=support>
+          <input type=hidden name=action value=send>
+          <div class="form-block">
+
+
+            <input type="text" name="name" value="" size="30" class="inpts" placeholder="Your Name" />
+
+          </div>
+          <div class="form-block">
+
+            <input type="text" name="email" value="" size="30" class="inpts" placeholder="Your Email"/>
+          </div>
+          <div class="form-block">
+            <textarea name=message class=inpts cols=45 rows=4 placeholder="Your Message"></textarea>
+          </div>
+
+        </tr>
+        <div class="form-block">
+          <input type=submit value="Send" class=sbmt>
+        </div>
+      </form>
+
+
+    </div>
+    <div class="contact_mid" >
+      <p> Do You have any questions? We strongly recommend that you start searching for the necessary information in the <a href="index38cd38cd.html?a=faq">FAQ</a> section. If you need advice or technical assistance, do not hesitate to contact our specialists. Customer support is available around the clock. You just need to send a letter or a request via the feedback form to promptly receive the necessary assistance. Remember that the more detailed the description of your problem is, the sooner it will be solved. Do not forget to indicate your login, if you are a registered user of the website.</p>
+      <div class="email" style="background-image: url('/static/images/contactemail.png')">
+        <h2>Contact Us:</h2>
+        <p><a href="mailto:customer@UTcapital.io">customer@UTcapital.io</a></p>
+        <p><b>Whatsapp:</b> +1 425-242-7010</p>
+        
+       <p><b>ADDRESS:</b> Republic Place, 1776 Eye Street, N.W., Suite 880
+Washington, DC
+USA
+20006</p>
+      </div>
+      
+        
+      
+      
+      
+      </div>  </div> </div>
+    </div>
+  </div>
+</div>
+{% include 'footer.html' %}
+{% endblock  %}
